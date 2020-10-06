@@ -170,7 +170,7 @@ class GridButtonItem {
   final Key key;
 
   /// The button's fill color.
-  final Color color;
+  Color color;
 
   /// The text to display on the button.
   final String title;
