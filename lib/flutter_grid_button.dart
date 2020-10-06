@@ -104,13 +104,13 @@ class _GridButtonState extends State<GridButton> {
           onPressed: (widget.enabled == true)
               ? () {
                   widget
-                      .onPressed({"widget": widget, "value": item.value != null ? item.value : item.title});
+                      .onPressed({"item": item, "value": item.value != null ? item.value : item.title});
                 }
               : null,
           onLongPress: (widget.enabled == true)
               ? () {
                   var result = item.longPressValue ?? item.value;
-                  widget.onPressed({"widget": widget, "value": result != null ? result : item.title});
+                  widget.onPressed({"item": item, "value": result != null ? result : item.title});
                 }
               : null,
           child: Text(
