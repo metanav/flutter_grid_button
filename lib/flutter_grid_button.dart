@@ -37,7 +37,7 @@ class GridButton extends StatefulWidget {
   final List<List<GridButtonItem>> items;
 
   /// Called when the button is tapped or otherwise activated.
-  final ValueChanged<dynamic> onPressed;
+  final ValueChanged<widget, dynamic> onPressed;
 
   /// The color to use when painting the line.
   final Color borderColor;
@@ -104,13 +104,13 @@ class _GridButtonState extends State<GridButton> {
           onPressed: (widget.enabled == true)
               ? () {
                   widget
-                      .onPressed(item.value != null ? item.value : item.title);
+                      .onPressed(widget, item.value != null ? item.value : item.title);
                 }
               : null,
           onLongPress: (widget.enabled == true)
               ? () {
                   var result = item.longPressValue ?? item.value;
-                  widget.onPressed(result != null ? result : item.title);
+                  widget.onPressed(widget, result != null ? result : item.title);
                 }
               : null,
           child: Text(
