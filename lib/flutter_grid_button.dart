@@ -194,7 +194,7 @@ class GridButtonItem {
   /// The corner radius of the button.
   final double borderRadius;
 
-  const GridButtonItem({
+   GridButtonItem({
     this.key,
     this.title,
     this.color,
